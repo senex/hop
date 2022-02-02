@@ -9,7 +9,7 @@ hop()
             grep "^${OPTARG} " $HOPRC >/dev/null
             if [ $? -eq 0 ]
             then
-                sed -i "s/^${OPTARG} .*/${OPTARG} $(pwd)/" $HOPRC
+                sed -i "s/^${OPTARG} .*/${OPTARG} $(pwd | sed 's/\//\\\//g')/" $HOPRC
             else
                 echo ${OPTARG} $(pwd) >> $HOPRC
             fi
@@ -26,7 +26,7 @@ hop()
             return 0
             ;;
         l)
-            grep -v "^[ #]" $HOPRC
+            grep -v "^[ #]" $HOPRC | grep -v '^$'
             return 0
             ;;
         h)
