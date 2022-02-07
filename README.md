@@ -3,9 +3,9 @@ Hop to various bookmarks in the filesystem in a BASH shell
 
 # Installation
 To install hop on your system, do the following:
-* Copy .hop.sh to your filesystem (usually $HOME)
+* Copy hop.sh to your filesystem (git clone is fine)
 * Add the following line to your $HOME/.bashrc
-    source ~/.hop.sh
+    source ~/path/to/hop.sh
 * Either reboot or re-source $HOME/.bashrc on all your shells
     source ~/.bashrc
 
